@@ -23,7 +23,11 @@ Current versions of all skills. Agents can compare against local versions to che
 | customer-research | 2.0.1 | 2026-07-10 |
 | directory-submissions | 2.0.0 | 2026-05-05 |
 | emails | 2.0.0 | 2026-05-05 |
+| finding-google-skills | 1.0.0 | 2026-09-26 |
 | free-tools | 2.0.0 | 2026-05-05 |
+| gcloud | 1.0.0 | 2026-09-26 |
+| google-cloud-recipe-auth | 1.0.0 | 2026-09-26 |
+| google-cloud-recipe-onboarding | 1.0.0 | 2026-09-26 |
 | image | 2.0.1 | 2026-05-18 |
 | influencer-marketing | 1.0.0 | 2026-07-15 |
 | launch | 2.0.1 | 2026-06-16 |
@@ -44,6 +48,7 @@ Current versions of all skills. Agents can compare against local versions to che
 | prospecting | 1.1.0 | 2026-07-13 |
 | public-relations | 1.0.0 | 2026-06-10 |
 | referrals | 2.0.0 | 2026-05-05 |
+| retrieving-developer-knowledge | 1.0.0 | 2026-09-26 |
 | revops | 2.0.0 | 2026-05-05 |
 | sales-enablement | 2.0.1 | 2026-06-16 |
 | schema | 2.0.0 | 2026-05-05 |
@@ -55,6 +60,15 @@ Current versions of all skills. Agents can compare against local versions to che
 | video | 2.1.0 | 2026-07-14 |
 
 ## Recent Changes
+
+### 2.11.0 (2026-09-26)
+
+- Added five **Google Cloud developer** skills, vendored from Google's official [google/skills](https://github.com/google/skills/tree/main/plugins/cloud/google-cloud-developer/skills) repo (`google-cloud-developer` plugin, Apache-2.0 — each skill ships its own `LICENSE` and credits Google LLC in `metadata`). Content is unchanged; only the frontmatter was normalized to this repo's format (single-line description, `license`, `metadata.version/author/source`). Total skills: 54.
+  - **finding-google-skills** — locates and loads the right Google product skill on demand from Google's remote catalog index.
+  - **gcloud** — safety-critical validation, guardrails, and output reduction for gcloud CLI commands (CLI + MCP references).
+  - **google-cloud-recipe-auth** — authentication and authorization to Google Cloud: principals, ADC, service accounts, impersonation, best practices.
+  - **google-cloud-recipe-onboarding** — first steps on Google Cloud: account, billing, project setup, first deployment.
+  - **retrieving-developer-knowledge** — grounded search over official Google developer docs via the Developer Knowledge MCP server (`https://developerknowledge.googleapis.com/mcp`, needs a `DEVELOPERKNOWLEDGE_API_KEY`) or its REST API fallback.
 
 ### 2.10.0 (2026-07-22)
 
