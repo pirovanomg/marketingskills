@@ -76,7 +76,11 @@ See each skill's **Related Skills** section for the full dependency map.
 | [customer-research](skills/customer-research/) | When the user wants to conduct, analyze, or synthesize customer research. Use when the user mentions "customer... |
 | [directory-submissions](skills/directory-submissions/) | When the user wants to submit their product to startup, SaaS, AI, agent, MCP, no-code, or review directories for... |
 | [emails](skills/emails/) | When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email... |
+| [finding-google-skills](skills/finding-google-skills/) | Locates and loads the right Google product skill on demand from a remote catalog index, instead of preloading every... |
 | [free-tools](skills/free-tools/) | When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or... |
+| [gcloud](skills/gcloud/) | Provides safety-critical validation, guardrails, and data reduction for gcloud CLI operations across Google Cloud... |
+| [google-cloud-recipe-auth](skills/google-cloud-recipe-auth/) | Provides expert guidance on authenticating and authorizing to Google Cloud services and APIs, covering human users,... |
+| [google-cloud-recipe-onboarding](skills/google-cloud-recipe-onboarding/) | Guides a developer's first steps on Google Cloud, covering account creation, billing setup, project management, and... |
 | [image](skills/image/) | When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product... |
 | [influencer-marketing](skills/influencer-marketing/) | When the user wants to run influencer, creator, or ambassador partnerships to promote their product — finding and... |
 | [launch](skills/launch/) | When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user... |
@@ -96,6 +100,7 @@ See each skill's **Related Skills** section for the full dependency map.
 | [prospecting](skills/prospecting/) | When the user wants to find, qualify, and build a list of prospects to reach out to — across B2B SaaS, general B2B, or... |
 | [public-relations](skills/public-relations/) | When the user wants help with public relations, earned media, press coverage, journalist outreach, or media strategy... |
 | [referrals](skills/referrals/) | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy.... |
+| [retrieving-developer-knowledge](skills/retrieving-developer-knowledge/) | Searches, retrieves, and synthesizes official Google developer documentation across Google Cloud, AI/Gemini, Android,... |
 | [revops](skills/revops/) | When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes.... |
 | [sales-enablement](skills/sales-enablement/) | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also... |
 | [schema](skills/schema/) | When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user... |
