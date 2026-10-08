@@ -61,7 +61,7 @@ Built-in snippets use [brackets] for details you fill in after pasting. If you w
 ## For whoever maintains this
 
 - **Edit the built-in snippets** in `snippets.js`. Each snippet is `[title, text]` inside a category. Titles must be unique, because each snippet's ID comes from its title. Renaming a title resets favorites and shortcuts for that one snippet.
-- No build step and no dependencies. It's plain HTML, CSS, and JavaScript.
+- No dependencies. It's plain HTML, CSS, and JavaScript; `build.js` only packages the files for sharing.
 - Files: `index.html` / `app.js` / `styles.css` (the app), `shared.js` (storage, shortcuts, copy), `content.js` (types snippets into web pages; extension only), `manifest.json` (extension config).
 - **Easier installs for staff:** publish to the Chrome Web Store as an *unlisted* item (one-time $5 developer fee). Staff then install with one click from a private link and get updates automatically. Upload `dist/serenity-snippets-extension.zip` from `node build.js`.
 - After editing snippets or code, run `node build.js` again and re-share the new files.
