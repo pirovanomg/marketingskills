@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serenity Snippets</title>
+  <link rel="icon" href="icons/icon-48.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img src="icons/icon-48.png" alt="" width="24" height="24">
+      <span>Serenity Snippets</span>
+    </div>
+    <div class="top-actions">
+      <button id="newBtn" class="btn btn-primary" type="button">+ New snippet</button>
+      <div class="menu-wrap">
+        <button id="menuBtn" class="btn btn-icon" type="button" aria-label="More options" aria-haspopup="true" aria-expanded="false">&#8942;</button>
+        <div id="menu" class="menu" role="menu" hidden>
+          <button type="button" role="menuitem" data-action="open-tab" class="ext-only">Open in a full tab</button>
+          <button type="button" role="menuitem" data-action="export">Back up my snippets</button>
+          <button type="button" role="menuitem" data-action="import">Restore from backup</button>
+          <button type="button" role="menuitem" data-action="help">How to use</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="search-wrap">
+    <input id="search" type="search" placeholder="Search snippets (press / to focus)" autocomplete="off" spellcheck="false"
+      role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="suggest">
+    <ul id="suggest" class="suggest" role="listbox" hidden></ul>
+  </div>
+
+  <nav id="chips" class="chips" aria-label="Categories"></nav>
+
+  <main id="list" class="list"></main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="editDialog">
+    <form method="dialog" id="editForm">
+      <h2 id="editHeading">New snippet</h2>
+      <label>Title
+        <input id="editTitle" required maxlength="80" placeholder="e.g. Morning walk">
+      </label>
+      <label>Snippet text
+        <textarea id="editText" required rows="6" placeholder="What gets pasted into the note"></textarea>
+      </label>
+      <p class="hint">Tip: <code>{date}</code> and <code>{time}</code> are filled in automatically when you copy.</p>
+      <div class="dialog-actions">
+        <button type="button" id="editDelete" class="btn btn-danger">Delete</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn" data-close>Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="shortcutDialog">
+    <form method="dialog" id="shortcutForm">
+      <h2>Keyboard shortcut</h2>
+      <p class="muted" id="shortcutFor"></p>
+      <div id="recorder" class="recorder" tabindex="0">Press a key combination…</div>
+      <p class="hint" id="shortcutHint"></p>
+      <p class="warn" id="shortcutWarn" hidden></p>
+      <div class="dialog-actions">
+        <button type="button" id="shortcutRemove" class="btn btn-danger">Remove shortcut</button>
+        <span class="spacer"></span>
+        <button type="button" class="btn" data-close>Cancel</button>
+        <button type="submit" id="shortcutSave" class="btn btn-primary" disabled>Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="importDialog">
+    <form method="dialog">
+      <h2>Restore from backup</h2>
+      <p>Choose a backup file (<code>serenity-snippets-backup-….json</code>). Your snippets, favorites, and shortcuts will be merged with what's already here.</p>
+      <div class="dialog-actions">
+        <span class="spacer"></span>
+        <button type="button" class="btn" data-close>Cancel</button>
+        <button type="button" id="chooseFile" class="btn btn-primary">Choose file…</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="helpDialog">
+    <form method="dialog">
+      <h2>How to use</h2>
+      <ul class="help">
+        <li><strong>Click any snippet</strong> to copy it, then paste it into a note with <kbd class="paste-key">Ctrl+V</kbd>.</li>
+        <li><strong>Search:</strong> start typing to see suggestions. Use the arrow keys and press <kbd>Enter</kbd> to copy.</li>
+        <li><strong>Favorites:</strong> click the star on a snippet to pin it to the top.</li>
+        <li><strong>Recently used</strong> snippets show up at the top automatically.</li>
+        <li><strong>My Snippets:</strong> click <em>+ New snippet</em> to write your own, or the pencil on any snippet to make your own version.</li>
+        <li><strong>Fill-ins:</strong> text in [brackets] is a reminder to fill in details after you paste.</li>
+        <li class="ext-only"><strong>Keyboard shortcuts:</strong> click the keyboard icon on a snippet and press a combination like <kbd>Alt+Shift+1</kbd>. Then, in any text box on any website (Axiscare, email, etc.), press it to type the snippet right where your cursor is.</li>
+        <li class="ext-only"><strong>Open this panel:</strong> press <kbd>Alt+Shift+S</kbd> from any page.</li>
+        <li class="web-only"><strong>Keyboard shortcuts:</strong> click the keyboard icon on a snippet and press a combination like <kbd>Alt+Shift+1</kbd>. While this page is open and in front, the shortcut copies the snippet. Install the browser extension to use shortcuts directly inside Axiscare and email.</li>
+      </ul>
+      <p class="muted">Privacy: everything is stored only on this computer, in this browser. Nothing is sent anywhere. Use <em>Back up my snippets</em> to move your snippets to another computer.</p>
+      <div class="dialog-actions">
+        <span class="spacer"></span>
+        <button type="submit" class="btn btn-primary">Got it</button>
+      </div>
+    </form>
+  </dialog>
+
+  <input type="file" id="importFile" accept=".json,application/json" hidden>
+
+  <script src="snippets.js"></script>
+  <script src="shared.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
